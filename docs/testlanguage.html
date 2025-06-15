@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-language Example with Fallback</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('cn')">Chinese</button>
+        <button onclick="changeLanguage('bm')">Malay</button>
+    </div>
+    <!-- Use data-key attributes to specify translation keys -->
+    <h1 data-key="menu_home"></h1>
+    <select id="DdlStatus" class="form-select form-select-sm text-capitalize">
+        <option value=""> Select Status </option>
+        <option value="Active" data-key="status_active"></option>
+        <option value="Suspended" data-key="status_suspended"></option>
+        <option value="Defaulter" data-key="status_defaulter"></option>
+    </select>
+    <button onclick="alert('You are selecting ' + document.getElementById('DdlStatus').value);">Check</button>
+    <script src="assets/js/app-language.js?t=1.0.3"></script>
+</body>
+</html>
