@@ -14,7 +14,7 @@ const label_enum = {
 
 // Function to load the translation file based on the selected language
 function loadLanguage(lang, callback) {
-    $.getJSON('locales/' + lang + '.json?t=1.2.10', function (data) {
+    $.getJSON('locales/' + lang + '.json?t=1.2.11', function (data) {
         translations[lang] = data; // Store translations for the language
         callback(data);
     }).fail(function () {
