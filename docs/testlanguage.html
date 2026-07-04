@@ -21,6 +21,12 @@
         <option value="Defaulter" data-key="status_defaulter"></option>
     </select>
     <button onclick="alert('You are selecting ' + document.getElementById('DdlStatus').value);">Check</button>
-    <script src="assets/js/app-language.js?t=1.0.3"></script>
+    <script>
+        (function () {
+            var script = document.createElement('script');
+            script.src = 'assets/js/app-language.js?t=' + (Date.parse(document.lastModified) || Date.now());
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 </html>

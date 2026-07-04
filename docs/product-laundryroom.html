@@ -196,7 +196,13 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/app-language.js?t=1.0.4"></script>
+    <script>
+        (function () {
+            var script = document.createElement('script');
+            script.src = 'assets/js/app-language.js?t=' + (Date.parse(document.lastModified) || Date.now());
+            document.body.appendChild(script);
+        })();
+    </script>
     <script>
         var heroCarousel = document.getElementById('hero-carousel');
         var carousel = new bootstrap.Carousel(heroCarousel, {

@@ -1,5 +1,7 @@
 ﻿let translations = {}; // Store loaded translations
 
+const languageCacheTimestamp = Date.parse(document.lastModified) || Date.now();
+
 const label_enum = {
     en: {
         label_language: "English"
@@ -14,7 +16,7 @@ const label_enum = {
 
 // Function to load the translation file based on the selected language
 function loadLanguage(lang, callback) {
-    $.getJSON('locales/' + lang + '.json?t=1.2.12', function (data) {
+    $.getJSON('locales/' + lang + '.json?t=' + languageCacheTimestamp, function (data) {
         translations[lang] = data; // Store translations for the language
         callback(data);
     }).fail(function () {
